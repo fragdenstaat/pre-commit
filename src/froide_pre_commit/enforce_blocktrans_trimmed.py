@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Pre-commit hook to enforce that blocktrans/blocktranslate blocks
 whose body starts with a newline (optionally preceded by spaces or

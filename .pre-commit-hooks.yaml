@@ -10,14 +10,14 @@
 
 - id: django-blocktrans-trimmed
   name: Ensure blocktrans/blocktranslate use trimmed
-  language: script
-  entry: scripts/enforce_blocktrans_trimmed.py
+  language: python
+  entry: enforce-blocktrans-trimmed
   files: \.html$
 
 - id: gettext-named-placeholders
   name: Ensure translatable strings use named placeholders
-  language: script
-  entry: scripts/enforce_named_placeholders.py
+  language: python
+  entry: enforce-named-placeholders
   files: \.py$
 
 # Requires a `checkmessagesde` make target in the consuming project that
@@ -40,7 +40,7 @@
   name: Ensure consistent dependencies (pnpm/uv.lock)
   language: python
   language_version: '3.13'
-  entry: scripts/ensure_consistent_dependencies.py
+  entry: ensure-consistent-dependencies
   additional_dependencies:
     - pyyaml
 

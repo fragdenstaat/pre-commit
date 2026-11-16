@@ -4,4 +4,12 @@ version = "0.1.0"
 description = "pre-commit hooks for froide projects"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = ["pyyaml>=6.0.3"]
+
+scripts.enforce-blocktrans-trimmed = "froide_pre_commit.enforce_blocktrans_trimmed:main"
+scripts.enforce-named-placeholders = "froide_pre_commit.enforce_named_placeholders:main"
+scripts.ensure-consistent-dependencies = "froide_pre_commit.ensure_consistent_dependencies:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
