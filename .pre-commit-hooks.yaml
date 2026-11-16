@@ -29,13 +29,6 @@
   files: \.(py|html|txt|po)$
   pass_filenames: false
 
-- id: unlink-frontend
-  name: Unlink frontend
-  language: script
-  entry: ./scripts/unlink_frontend.sh
-  files: pnpm-lock.yaml
-  stages: [pre-commit]
-
 - id: ensure-consistent-dependencies
   name: Ensure consistent dependencies (pnpm/uv.lock)
   language: python
@@ -43,6 +36,13 @@
   entry: ensure-consistent-dependencies
   additional_dependencies:
     - pyyaml
+
+- id: unlink-frontend
+  name: Unlink frontend
+  language: script
+  entry: ./scripts/unlink_frontend.sh
+  always_run: true
+  stages: [pre-commit]
 
 - id: relink-frontend
   name: Re-link frontend

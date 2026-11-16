@@ -46,6 +46,7 @@ def main():
             npm_version = pnpm_commit_re.search(
                 npm_packages[npm_package_name]["version"]
             )
+            print("name", npm_packages[npm_package_name]["version"])
             assert npm_version
             npm_version = npm_version.group(1)
 
